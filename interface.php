@@ -26,7 +26,11 @@ abstract class Transportation {
     abstract public function stop();
 }
 
-class Car extends Transportation {
+interface TransportationInterface {
+    public function fly();
+}
+
+class Car extends Transportation implements TransportationInterface {
     public $jmlPintu;
     public function __construct($name, $brand, $jmlPintu)
     {
@@ -42,6 +46,10 @@ class Car extends Transportation {
     }
     public function stop(){
         return "transportasi dengan nama " . $this->get_name() . " telah berhenti ";
+    }
+    public function fly()
+    {
+        return "Transportasi dengan nama " . $this->get_name() . " bisa terbang ";
     }
 }
 
@@ -93,6 +101,8 @@ $motor->sizeJok = "100cm";
 echo $motor->run();
 echo "<br>";
 echo $mobil->run();
+echo "<br>";
+echo $mobil->fly();
 echo "<br>";
 echo $pesawat->run();
 echo "<br>";

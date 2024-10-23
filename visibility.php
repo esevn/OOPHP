@@ -3,18 +3,11 @@
 class Transportation {
     public $name;
     protected $brand;
-    // public $jmlPintu;
-    // public $sizeJok;
-    // public $ketinggian;
-
 
     protected function __construct($name, $brand)
     {
         $this->name = $name;
         $this->brand =$brand;
-        // $this->jmlPintu = $jmlPintu;
-        // $this->sizeJok = $sizeJok;
-        // $this->ketinggian = $ketinggian;
     }
 
     public function stop(){
